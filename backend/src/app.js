@@ -8,7 +8,8 @@ import videosRouter from './routes/videosRouter.js'
 
 const app = express();
 app.use(corsMiddleware);
-app.options("*", corsMiddleware); // ✅ important for preflight
+app.options("/*", corsMiddleware); 
+ // ✅ important for preflight
 
 
 app.use(express.json());

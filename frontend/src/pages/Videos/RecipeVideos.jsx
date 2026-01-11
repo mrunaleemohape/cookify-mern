@@ -10,6 +10,8 @@ import { asyncGetVideosActions } from "../../store/actions/videosAction.jsx";
 
 const RecipeVideos = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+// console.log();
+// Image
 
   const dispatch = useDispatch();
   const videos = useSelector((state) => state.recipes.Videos) || [];
@@ -98,7 +100,7 @@ const RecipeVideos = () => {
 
         <div className={styles.heroStats}>
           <span >🔥 Trending today</span>
-          <span><img className={styles.trendingImg} src={topVideo.imageUrl} alt={topVideo.title} />{logger()} {topVideoText}</span>
+          <span><img className={styles.trendingImg} src={topVideo.imageUrl ? topVideo.imageUrl:'https://placehold.co/600x400/png?text=Cookify'} alt={topVideo.title} />{logger()} {topVideoText}</span>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ const CreateRecipe = lazy(() => import("../pages/createRecipe/CreateRecipe"));
 const SingleRecipe = lazy(() => import("../pages/singleRecipePg/SingleRecipe"));
 const RecipeCard = lazy(() => import("../components/RecipeCard"));
 const UpdateRecipe = lazy(() => import("../pages/UpdateRecipe"));
-const Favorites = lazy(() => import("../pages/favorites"));
+const Favorites = lazy(() => import("../pages/Favorites"));
 const Login = lazy(() => import("../pages/authetication/login/Login"));
 const MyRecipes = lazy(() => import("../pages/myRecipes/MyRecipes"));
 const Register = lazy(() =>

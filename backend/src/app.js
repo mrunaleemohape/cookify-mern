@@ -7,9 +7,7 @@ import videosRouter from './routes/videosRouter.js'
 // import userRecipeRoutes from './routes/userRecipes.route.js'
 
 const app = express();
-app.use(corsMiddleware);
-app.options( corsMiddleware); 
- // ✅ important for preflight
+app.use(corsMiddleware); 
 
 
 app.use(express.json());

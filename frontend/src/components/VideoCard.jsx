@@ -50,8 +50,6 @@ const VideoCard = ({ video }) => {
     <div
       className={styles.videoCard}
       onClick={handlePlay}
-      // onMouseEnter={() => setIsHover(true)}
-      // onMouseLeave={() => setIsHover(false)}
     >
       <div className={styles.thumb}>
         {play && videoId ? (
@@ -62,7 +60,7 @@ const VideoCard = ({ video }) => {
             allow="autoplay; encrypted-media"
           />
         ) : (
-          <img src={imageUrl} alt={title} />
+          <img src={imageUrl? 'imageUrl':'https://placehold.co/600x400/png?text=Cookify'} alt={title} />
         )}
 
         <span className={styles.duration}>{duration}</span>

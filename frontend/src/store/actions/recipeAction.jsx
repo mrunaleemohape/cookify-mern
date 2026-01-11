@@ -6,7 +6,7 @@ import {
   toggleFavoriteLocal,
   deleteRecipe,
   updateRecipeViewsLocal,
-} from "../reducers/recipeSlice";
+} from "../reducers/recipeSlice.jsx";
 import { loadFavorites } from "../reducers/FavoriteSlice";
 export const asyncGetRecipeActions = (userId) => async (dispatch, getState) => {
   try {

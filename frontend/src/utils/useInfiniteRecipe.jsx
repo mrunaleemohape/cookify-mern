@@ -4,7 +4,7 @@ import { useRef } from "react";
 import axios from "../utils/axios";
 import { useState } from "react";
 
-import { loadLazyRecipe } from "../store/reducers/RecipeSlice";
+import { loadLazyRecipe } from "../store/reducers/recipeSlice";
 
 const useRegister = (initialCursor = null) => {
   const dispatch = useDispatch();

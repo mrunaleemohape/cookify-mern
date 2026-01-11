@@ -6,7 +6,7 @@ import styles from "../pages/Videos/recipeVideos.module.scss";
 import { asyncIncrementRecipeViews } from "../store/actions/recipeAction";
 
 const VideoCard = ({ video }) => {
-  const { _id, imageUrl, videoUrl, title, views } = video;
+  const { _id, imageUrl='https://dummyjson.com/recipes', videoUrl, title='dummy recipe', views=0 } = video;
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

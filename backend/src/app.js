@@ -7,7 +7,7 @@ import cors from "cors";
 
 const app = express();
 app.use(
-  cors({ origin: ["http://localhost:5173",'https://cookify-mern.vercel.app/','https://cookify-mern-kl6ecea6k-mrunalees-projects.vercel.app'], methods: ["GET", 'PATCH',"POST", "DELETE"] })
+  cors({ origin: ["http://localhost:5173",'https://cookify-mern.vercel.app'], methods: ["GET", 'PATCH',"POST", "DELETE"] })
 );
 app.use(express.json());
 app.use("/api", recipeRoutes);

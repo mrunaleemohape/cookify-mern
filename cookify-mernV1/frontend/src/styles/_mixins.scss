@@ -1,0 +1,43 @@
+@mixin flex(
+  $justify: center,
+  $align: center,
+  $direction: row,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin button($margin:1rem,$width:fit-content,$radius:5px,$bg: var(--primary), $color: var(--white)) {
+  width: $width;
+  // width: fit-content;
+  padding: 0.3rem;
+  margin: $margin;
+  background: $bg;
+  color: $color;
+  border-radius: $radius;
+}
+
+// Responsive Mixin with your breakpoints
+@mixin responsive($size) {
+  @if $size == tablet {
+    @media (max-width: 920px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    // Base styles (no media query)
+    @content;
+  } @else {
+    @warn "Unknown responsive size `#{$size}`. Use: desktop | tablet | mobile.";
+  }
+}
+

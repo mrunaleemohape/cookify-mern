@@ -1,0 +1,99 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #efd5c3, #7ea89a);
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--white);
+  border-radius: 18px;
+  padding: 2.2rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.card h1 {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 1.6rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--pri);
+}
+
+button {
+  margin-top: 1.8rem;
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--pri);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #256656;
+}
+
+button:disabled {
+  background: #9fbfb5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 920px) {
+  .card {
+    padding: 2rem;
+  }
+}
+/* Mobile */
+@media (max-width: 480px) {
+  .page {
+    padding: 2rem 0.8rem;
+  }
+  .card {
+    border-radius: 16px;
+    margin: 0.5rem;
+    padding: auto;
+    width: auto;
+  }
+  .header h1 {
+    font-size: 1.6rem;
+  }
+}/*# sourceMappingURL=CreateRecipe.module.css.map */

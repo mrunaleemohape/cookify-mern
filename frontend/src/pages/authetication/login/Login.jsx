@@ -42,58 +42,6 @@ export default function Login() {
   };
 
   return (
-  //    <section className={styles.loginPage}>
-  //         {/* LEFT CONTENT */}
-         
-  //         <Particles
-  //   particleColors={['#ffffff', '#ffffff']}
-  //   particleCount={200}
-  //   particleSpread={10}
-  //   speed={0.1}
-  //   particleBaseSize={100}
-  //   moveParticlesOnHover={true}
-  //   alphaParticles={false}
-  //   disableRotation={false}
-  // /> <div className={styles.left}>
-  //           <h1>
-  //             Welcome back,<br />
-  //             {/* here, */}
-  //              <span>let’s get cooking</span>
-  //           </h1>
-  //           {/* <p>Please fill the form on the right side.</p> */}
-  //         </div>
-    
-  //         {/* RIGHT GLASS CARD */}
-  //         <div className={styles.right}>
-  //           <div className={styles.card}>
-  //             <h2>Login</h2>
-  //             <form onSubmit={handleSubmit(LoginUserHandler)}>
-  //               {" "}
-  //               <input
-  //                 type="email"
-  //                 placeholder="email"
-  //                 {...register("email")}
-  //                 name="email"
-  //               />
-  //               <input
-  //                 type="password"
-  //                 placeholder="password"
-  //                 {...register("password")}
-  //                 name="password"
-  //               />
-  //               <button type="submit">
-  //               Let Me In →
-  //             </button>
-  //             </form>
-    
-              
-    
-  //             <p className={styles.signup}>
-  //               Don’t have an account? <span onClick={signUp}><b>Register</b> </span>
-  //             </p>
-  //           </div>
-  //         </div>
-  //       </section>
   <section className={styles.loginPage}>
   
   {/* BACKGROUND */}

@@ -31,6 +31,9 @@ export const asyncLoginUser = (data) => async (dispatch, getState) => {
     const res = await axios.post("/login", data);
     localStorage.setItem("token", JSON.stringify(res));
     dispatch(asyncCurrentUser());
+    console.log(import.meta.env.VITE_API_URL);
+
+    
 
     toast.success("user logged in successfully");
     

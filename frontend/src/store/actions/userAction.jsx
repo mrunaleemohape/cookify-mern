@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 //reducers
 import { loadUser, resetUser } from "../reducers/UserSlice";
-import { resetRecipes } from '../reducers/RecipeSlice';
+import { resetRecipes } from '../reducers/recipeSlice';
 resetRecipes
 
 

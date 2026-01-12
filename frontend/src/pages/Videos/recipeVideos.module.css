@@ -284,7 +284,7 @@
   }
 }
 /* RESPONSIVE */
-@media (max-width: 920px) {
+@media (max-width: 786px) {
   .videoGrid {
     grid-template-columns: repeat(2, 1fr);
   }

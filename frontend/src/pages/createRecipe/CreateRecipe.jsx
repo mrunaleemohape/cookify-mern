@@ -1,6 +1,6 @@
 import useRecipeForm from "../../components/useRecipeForm";
 import React, { useState } from "react";
-import styles from "./CreateRecipe.module.css";
+import styles from "./CreateRecipe.module.scss";
 
 import { useForm,useFieldArray } from "react-hook-form";
 const CreateRecipe = () => {

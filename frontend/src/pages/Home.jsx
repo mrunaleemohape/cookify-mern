@@ -7,7 +7,6 @@ import VariableProximity from "../utils/animations/VariableProximity/VariablePro
 ////////////
 
 /////////////////
-import Navbar from "../components/Navbar";
 import styles from "../cssFiles/Home.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

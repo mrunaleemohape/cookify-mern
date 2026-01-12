@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
 import MainRoutes from "./routes/MainRoutes.jsx";
 import { useDispatch } from "react-redux";
 

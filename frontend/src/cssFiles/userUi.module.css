@@ -69,14 +69,14 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 }
-.updateHeader {
+.updateCard .updateHeader {
   text-align: center;
   margin-bottom: 1.4rem;
 }
-.updateHeader h3 {
+.updateCard .updateHeader h3 {
   margin: 0;
 }
-.updateHeader p {
+.updateCard .updateHeader p {
   margin: 0.4rem 0 0;
   font-size: 0.85rem;
   color: var(--muted);
@@ -87,12 +87,12 @@
   flex-direction: column;
   gap: 1.1rem;
 }
-.field {
+.form .field {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
-.field span {
+.form .field span {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text);

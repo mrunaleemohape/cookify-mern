@@ -1,12 +1,17 @@
-@import "../styles/mixins";
+@import "../../../styles/mixins";
+
 .isActive {
   color: var(--primary);
   font-weight: 600;
 }
 
 .navbar {
+  
   width: 100%;
   @include flex(space-between, center, row);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   // background: radial-gradient(var(--primary),var(--secondary),var(--tertiary));
   background: var(--primary);
@@ -73,8 +78,8 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--text);
+  background: var(--pri);
+  color: var(--white);
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
   font-weight: 700;
@@ -83,6 +88,7 @@
 
 @include responsive(tablet){
   .navbar{
+    // background: #000;
     width: 100%;
     @include flex(space-between,center,row,.4rem,wrap);
     font-size: clamp(1rem, 1vw + 0.75rem, .5rem);
@@ -108,6 +114,32 @@
   }
 }
 
-// @include responsive(tablet){}
 
-// @include responsive(mobile){}
+
+@include responsive(mobile){
+  .navbar{
+//     // background: #000;
+    width: 100%;
+    @include flex(space-between,center,row,.4rem,wrap);
+    font-size: clamp(1rem, 1vw + 0.75rem, .5rem);
+    padding: .6rem .8rem;
+    // margin: .1rem;
+  }
+  .menuToggle {
+    display: inline-flex;
+  }
+  .navLinks {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.6rem 0;
+  }
+  .navLinksOpen {
+    display: flex;
+  }
+  .navLinks a {
+    width: 100%;
+  }
+}

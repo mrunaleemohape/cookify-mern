@@ -22,7 +22,7 @@ const About = lazy(() => import("../pages/About"));
 import Loader from "../pages/Loader";
 const UserRoutes = lazy(() => import("./UserRoutes"));
 const AuthWrapper = lazy(() => import("../services/AuthWrapper"));
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar.jsx";
 
 const MainRoutes = () => {
   return (

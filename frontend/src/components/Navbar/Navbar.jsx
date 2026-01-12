@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import styles from "../cssFiles/Navbar.module.css";
-import userStyles from "../cssFiles/userUi.module.css";
+import styles from "./css/Navbar.module.css";
+// import userStyles from "./../cssFiles/userUi.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { resetUser } from "../store/reducers/UserSlice";
+import { resetUser } from "../../store/reducers/UserSlice";
 // import { useNavigate } from "react-router-dom";
 // const navigate=useNavigate();
 const Navbar = () => {
@@ -31,7 +31,8 @@ const Navbar = () => {
         aria-controls="navbar-links"
         aria-label="Toggle navigation"
       >
-        ...
+         <i className="ri-menu-line"></i> 
+      <span>Menu</span>
       </button>
       <nav
         id="navbar-links"

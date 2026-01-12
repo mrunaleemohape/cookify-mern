@@ -100,7 +100,7 @@
 }
 
 /* TABLET */
-@media (max-width: 920px) {
+@media (max-width: 786px) {
   .about_hero {
     flex-direction: column;
     text-align: center;

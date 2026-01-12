@@ -26,7 +26,7 @@
 // Responsive Mixin with your breakpoints
 @mixin responsive($size) {
   @if $size == tablet {
-    @media (max-width: 920px) {
+    @media (max-width: 786px) {
       @content;
     }
   } @else if $size == mobile {
@@ -35,7 +35,9 @@
     }
   } @else if $size == desktop {
     // Base styles (no media query)
-    @content;
+     @media (max-width: 1200px) {
+      @content;
+    }
   } @else {
     @warn "Unknown responsive size `#{$size}`. Use: desktop | tablet | mobile.";
   }

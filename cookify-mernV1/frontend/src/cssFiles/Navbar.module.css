@@ -15,24 +15,6 @@
   border-bottom: 1px solid var(--border);
   padding: 0.8rem 1rem;
 }
-.navLinks {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-.menuToggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-weight: 700;
-  cursor: pointer;
-}
 .navbar .avatar {
   border-radius: 100%;
   width: 25px;
@@ -68,7 +50,27 @@
   text-decoration: underline;
 }
 
-@media (max-width: 920px) {
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 786px) {
   .navbar {
     width: 100%;
     display: flex;

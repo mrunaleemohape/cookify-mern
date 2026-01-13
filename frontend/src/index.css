@@ -32,7 +32,6 @@ html {
   font-size: 100%; /* 16px baseline. Use rems everywhere. */
   line-height: 1.45;
   height: 100%;
-  width: 100%;
   color: var(--text);
 }
 
@@ -75,6 +74,8 @@ label {
 #root {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 :root {

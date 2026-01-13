@@ -33,7 +33,7 @@ html {
   font-size: 100%; /* 16px baseline. Use rems everywhere. */
   line-height: 1.45;
   height: 100%;
-  width: 100%;
+ 
   color: var(--text);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -72,6 +72,8 @@ label {
 #root {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 :root {
   // --primary: #2f7f6d;

@@ -3,7 +3,7 @@ import React from "react";
 import { lazy } from "react";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-const Home = lazy(() => import("../pages/Home"));
+const Home = lazy(() => import("../pages/Home/Home.jsx"));
 
 const RecipeVideos = lazy(() => import("../pages/Videos/RecipeVideos"));
 const Recipes = lazy(() => import("../pages/Recipes"));

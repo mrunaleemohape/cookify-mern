@@ -1,0 +1,299 @@
+/* HERO CONTENT */
+.heroWrapper {
+  background: radial-gradient(circle at top, var(--secondary), var(--primary));
+  width: 100%;
+  padding: 1.5rem 2rem 3rem;
+  border-radius: 22px;
+  color: var(--white);
+}
+.heroWrapper .navbar {
+  background: var(--white);
+  color: var(--text);
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: nowrap;
+  margin-bottom: 2rem;
+}
+.heroWrapper .navbar .logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+.heroWrapper .heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.heroWrapper .heroContent .heroImage img {
+  width: 100%;
+  max-height: 420px;
+  border-radius: 18px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.heroWrapper .heroContent .heroText {
+  padding-right: 2rem;
+}
+.heroWrapper .heroContent .heroText h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.heroWrapper .heroContent .heroText p {
+  color: var(--white);
+  font-size: 0.95rem;
+  max-width: 420px;
+}
+.heroWrapper .heroContent .heroText .heroActions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.heroWrapper .heroContent .heroText .heroActions .primaryBtn {
+  background: var(--primary);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+}
+.heroWrapper .heroContent .heroText .heroActions .videoBtn {
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.sectionHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.sectionHeader p {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.recipesSection {
+  background: beige;
+  width: 100%;
+  padding: 5rem 1.5rem 4rem;
+  border-top-left-radius: 48px;
+  border-top-right-radius: 48px;
+}
+.recipesSection .recipesInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.recipesSection .viewAllWrap {
+  margin-top: 3rem;
+  text-align: center;
+}
+.recipesSection .viewAllWrap .viewAllBtn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card {
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+}
+.card:hover img {
+  transform: scale(1.08);
+}
+.card .cardTextCorner {
+  padding: 1rem 1.1rem 1.2rem;
+}
+.card .title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.card .description {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.card p {
+  color: var(--text);
+}
+.card .imageWrapper {
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+.card .imageWrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card h4 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+.card p {
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 786px) {
+  /* HERO */
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .heroContent .heroImage img {
+    max-height: 360px;
+  }
+  .heroContent .heroText h1 {
+    font-size: 2.2rem;
+  }
+  .heroContent .heroText p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .heroContent .heroText .heroActions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .recipesSection {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px;
+    padding: 1rem;
+    background: var(--tri);
+  }
+  .recipesSection .recipesInner {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    gap: 8px;
+    padding: 0.5rem;
+  }
+  .recipesSection .recipesInner img {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .card {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  /* HERO */
+  .heroWrapper {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+  .heroWrapper .heroContent {
+    grid-template-columns: 2fr;
+    gap: 1.8rem;
+  }
+  .heroWrapper .heroContent .heroImage img {
+    max-height: 280px;
+    border-radius: 14px;
+  }
+  .heroWrapper .heroContent .heroText h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+  .heroWrapper .heroContent .heroText p {
+    font-size: 0.9rem;
+  }
+  .heroWrapper .heroContent .heroText .heroActions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .heroWrapper .heroContent .heroText .heroActions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .recipesSection {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 2px;
+    background: beige;
+  }
+  .recipesSection .recipesInner {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 2px;
+  }
+  .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  button {
+    min-height: 44px;
+  }
+}/*# sourceMappingURL=Home.module.css.map */

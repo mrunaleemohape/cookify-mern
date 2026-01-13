@@ -1,22 +1,25 @@
-import React from "react";
-import TrueFocus from "../utils/animations/trueFocus/trueFocus.jsx";
-// import { lazy } from "react";
 import { useRef } from "react";
-import ImageTrail from "../utils/animations/imageTrails/imageTrails.jsx";
-import VariableProximity from "../utils/animations/VariableProximity/VariableProximity.jsx";
-////////////
-
-/////////////////
-import styles from "../cssFiles/Home.module.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
-import useInfiniteRecipe from "../utils/useInfiniteRecipe.jsx";
-import HomeRecipeCard from "../components/HomeRecipeCard";
-import { asyncGetLimitRecipies } from "../store/actions/recipeAction.jsx";
-import End from "./End";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+
+//ACTIONS
+
+import { asyncGetLimitRecipies } from "../../store/actions/recipeAction.jsx";
+
+//COMPONENTS
+
+import HomeRecipeCard from "../../components/HomeRecipeCard.jsx";
+
+//STYLES
+
+import styles from "./css/Home.module.css";
+
+//ANIMATIONS
+
+import TrueFocus from "../../utils/animations/trueFocus/trueFocus.jsx";
+import ImageTrail from "../../utils/animations/imageTrails/imageTrails.jsx";
+import VariableProximity from "../../utils/animations/VariableProximity/VariableProximity.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,7 +31,7 @@ const Home = () => {
       dispatch(asyncGetLimitRecipies(6));
     }
   }, [dispatch, userId]);
-  // const { recipe, fetchRecipes, isLoading } = useInfiniteRecipe();
+
   const recipe = useSelector((state) => state.recipes.data);
   const recipeList = Array.isArray(recipe) ? recipe.slice(0, 6) : [];
 
@@ -58,7 +61,7 @@ const Home = () => {
     navigate(`/user/${userId}/recipes/`);
   };
   const viewVideos = () => {
-    console.log("videos");
+    // console.log("videos");
     navigate("/recipes/videos");
   };
   return (

@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 
 //Actions
 import {asyncCurrentUser} from './store/actions/userAction.jsx'
-import { asyncGetRecipeActions } from "./store/actions/recipeAction.jsx";
 
 //App
 const App = () => {

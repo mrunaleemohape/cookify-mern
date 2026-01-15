@@ -21,7 +21,8 @@ const NotFound = lazy(() => import("../pages/NotFound"));
 const About = lazy(() => import("../pages/About"));
 import Loader from "../pages/Loader";
 const UserRoutes = lazy(() => import("./UserRoutes"));
-const AuthWrapper = lazy(() => import("../services/AuthWrapper"));
+import AuthWrapper from '../services/AuthWrapper'
+// const AuthWrapper = lazy(() => import("../services/AuthWrapper"));
 import Navbar from "../components/Navbar/Navbar.jsx";
 
 const MainRoutes = () => {
@@ -93,7 +94,8 @@ const MainRoutes = () => {
         />
 
         <Route
-          path="/user/:id/recipe/update/:id"
+          path="/user/:userId/recipe/update/:recipeId"
+
           element={
             <AuthWrapper>
               <Navbar />

@@ -54,7 +54,7 @@ const nav = useNavigate();
      <div className={styles.categorySlider}> 
       <div className={styles.card} onClick={viewRecipe}>
          <div className={styles.imageWrapper}>
-        <img  src={imageUrl? imageUrl:'loading'}
+        <img  src={imageUrl? imageUrl:'loading'} loading='lazy' width='600' height='400'
             alt={title? title:""}/>
       </div>
           

@@ -60,7 +60,7 @@ const VideoCard = ({ video }) => {
             allow="autoplay; encrypted-media"
           />
         ) : (
-          <img src={imageUrl? 'imageUrl':'https://placehold.co/600x400/png?text=Cookify'} alt={title} />
+          <img src={imageUrl? 'imageUrl':'https://placehold.co/600x400/png?text=Cookify'} loading="lazy" alt={title} />
         )}
 
         <span className={styles.duration}>{duration}</span>

@@ -72,8 +72,11 @@ const RecipeCard = ({ item, showOwnerActions = false, onEdit, onDelete }) => {
           firstContent={
             <img
               src={imageUrl}
+              loading="lazy"
               alt={title}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              // style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              width='600'
+              height='400'
             />
           }
           secondContent={

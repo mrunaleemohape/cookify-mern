@@ -2,7 +2,7 @@ import axios from '../../utils/axios'
 import { toast } from "react-toastify";
 
 //reducers
-import { loadUser, resetUser } from "../reducers/UserSlice";
+import { loadUser, resetUser ,setHydrated} from "../reducers/UserSlice";
 import { resetRecipes } from '../reducers/recipeSlice';
 resetRecipes
 
@@ -49,11 +49,17 @@ export const asyncCurrentUser = () => (dispatch, getState) => {
     if (user) dispatch(loadUser(user));
     else {
       // resetUser
+      dispatch(resetUser());
       dispatch(resetRecipes());
-      toast.warn('unauthorized user')
+      // toast.warn('unauthorized user')
     }
   } catch (error) {
     console.log(error);
+    
+      dispatch(resetRecipes());
+  }
+  finally {
+    dispatch(setHydrated(true));   // ⭐ MOST IMPORTANT LINE
   }
   //
 };

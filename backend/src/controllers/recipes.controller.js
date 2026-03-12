@@ -1,3 +1,4 @@
+import { recipeModel } from "../models/recipe.model.js";
 import {
   createRecipe,
   deleteRecipe,
@@ -104,4 +105,20 @@ export async function incrementRecipeViewsController(req, res) {
   } catch (error) {
     return handleServiceError(res, error, "incrementRecipeViewsController error:");
   }
+}
+
+export async function getRecipeDetail(req,res){
+  try {
+      const {id}=req.params
+  
+ const recipe=await recipeModel.findById(id).lean();
+ console.log(recipe);
+ 
+ res.status(200).json({message:"success",data:recipe})
+  } catch (error) {
+   return handleServiceError(res, error, "getRecipeDetail error:");
+ 
+  }
+  
+
 }

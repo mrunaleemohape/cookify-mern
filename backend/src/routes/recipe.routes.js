@@ -6,6 +6,7 @@ import {
   deleteRecipeController,
   incrementRecipeViewsController,
   setFavoriteController,
+  getRecipeDetail
 } from "../controllers/recipes.controller.js";
 import { getMyRecipesController } from "../controllers/recipes.controller.js";
 import { requireUserId } from "../middlewares/auth.middleware.js";
@@ -20,5 +21,7 @@ router.post("/recipes/:id/views", incrementRecipeViewsController);
 router.post("/recipes/:id/favorite", requireUserId, setFavoriteController);
 
 router.get('/user/:id/myRecipes',getMyRecipesController)
+
+router.get('/user/detail/:id/',getRecipeDetail)
 
 export default router

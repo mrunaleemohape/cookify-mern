@@ -74,7 +74,6 @@ export async function updateRecipeController(req, res) {
   }
 }
 
-
 export async function getMyRecipesController(req, res) {
   try {
     const myRecipe = await getMyRecipes({ userId: req.params.id });
@@ -103,22 +102,22 @@ export async function incrementRecipeViewsController(req, res) {
     const recipe = await incrementRecipeViews({ id: req.params.id });
     return res.status(200).json({ id: recipe._id, views: recipe.views });
   } catch (error) {
-    return handleServiceError(res, error, "incrementRecipeViewsController error:");
+    return handleServiceError(
+      res,
+      error,
+      "incrementRecipeViewsController error:",
+    );
   }
 }
-
-export async function getRecipeDetail(req,res){
+// used to get single recipe with id 
+export async function getRecipeDetail(req, res) {
   try {
-      const {id}=req.params
-  
- const recipe=await recipeModel.findById(id).lean();
- console.log(recipe);
- 
- res.status(200).json({message:"success",data:recipe})
-  } catch (error) {
-   return handleServiceError(res, error, "getRecipeDetail error:");
- 
-  }
-  
+    const { id } = req.params;
 
+    const recipe = await recipeModel.findById(id).lean();
+
+    res.status(200).json(recipe);
+  } catch (error) {
+    return handleServiceError(res, error, "getRecipeDetail error:");
+  }
 }

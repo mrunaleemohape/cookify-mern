@@ -5,21 +5,30 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 
-import { asyncAddToFavorite, asyncIncrementRecipeViews } from "../../store/actions/recipeAction";
+import { asyncAddToFavorite, getDetailRecipeAction, asyncIncrementRecipeViews } from "../../store/actions/recipeAction";
 import { useEffect } from "react";
-import instance from "../../utils/axios";
+import { resetRecipes } from "../../store/reducers/recipeSlice";
 
-const SingleRecipe =  () => {
+
+
+const SingleRecipe = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const _id = id;
   const dispatch = useDispatch();
-  // const recipe = useSelector((state) => state.recipes.data);
-  const recipe = instance.get(`/user/${id}/myRecipes`);
-  console.log(recipe,'hii');
-  
+  useEffect(() => {
+    dispatch(getDetailRecipeAction(id))
+    if (id) {
+      dispatch(asyncIncrementRecipeViews(id));
+    }
+    return () => { dispatch(resetRecipes()) }
+
+  }
+    , [id, dispatch])
+  const recipe = useSelector((state) => state.recipes.data[0])
+
+
   const user = useSelector((state) => state.users.data);
-  const filteredData = recipe?.find((f) => f._id == _id);
   const normalizeList = (value) => {
     if (Array.isArray(value)) {
       return value;
@@ -33,26 +42,19 @@ const SingleRecipe =  () => {
     }
     return [];
   };
-  const ingredients = normalizeList(filteredData?.ingredients);
-  const instructions = normalizeList(filteredData?.instructions);
+  const ingredients = normalizeList(recipe?.ingredients);
+  const instructions = normalizeList(recipe?.instructions);
 
-  useEffect(() => {
-    if (id) {
-      dispatch(asyncIncrementRecipeViews(id));
-    }
-    console.log(id);
-    
-  }, []);
+
 
   const favorite = (title) => {
-    //testing logic
-    const favResult = !filteredData.fav;
+    const favResult = !recipe.fav;
     dispatch(asyncAddToFavorite({ _id, favResult }));
     if (favResult == true) {
-      toast.success(`${filteredData.title} added to favorites!!!`);
+      toast.success(`${recipe.title} added to favorites!!!`);
     }
     if (favResult == false) {
-      toast.success(`${filteredData.title} Removed from favorites!!!`);
+      toast.success(`${recipe.title} Removed from favorites!!!`);
     }
     //test ends
   };
@@ -65,45 +67,44 @@ const SingleRecipe =  () => {
 
     navigate("/recipes");
   };
-  if (!filteredData) return <h1>Loading recipe...</h1>;
 
-  return (
+
+  return recipe ? (
     <section className={styles.page}>
       <div className={styles.container}>
         {/* HERO */}
         <div className={styles.hero}>
           <img
-            src={filteredData.imageUrl}
-            alt={filteredData.title}
+            src={recipe.imageUrl}
+            alt={recipe.title}
             className={styles.heroImage}
           />
 
           <div className={styles.heroContent}>
-            <h1>{filteredData.title}</h1>
-            <p className={styles.description}>{filteredData.description}</p>
+            <h1>{recipe.title}</h1>
+            <p className={styles.description}>{recipe.description}</p>
 
             {/* META */}
             <div className={styles.meta}>
               <div className={styles.author}>
                 <img
                   src={
-                    filteredData.createdBy?.avatar ||
-                    `https://ui-avatars.com/api/?name=${
-                filteredData?.createdBy?.username || 'Anonymous'
-              }+User&background=2f7f6f&color=fff`
+                    recipe.createdBy?.avatar ||
+                    `https://ui-avatars.com/api/?name=${recipe?.createdBy?.username || 'Anonymous'
+                    }+User&background=2f7f6f&color=fff`
                   }
                   alt="author"
                 />
-                
+
                 <div>
                   <span>Created by</span>
-                  <strong>{filteredData.createdBy?.username || 'Anonymous'
+                  <strong>{recipe.createdBy?.username || 'Anonymous'
                   }</strong>
                 </div>
               </div>
 
               <button className={styles.favBtn} onClick={favorite}>
-                {filteredData.fav ? "Remove from favorites" : "Add to favorites"}
+                {recipe.fav ? "Remove from favorites" : "Add to favorites"}
               </button>
             </div>
           </div>
@@ -133,7 +134,7 @@ const SingleRecipe =  () => {
         </div>
       </div>
     </section>
-  );
+  ) : <h1>Loading recipe...</h1>
 };
 
 export default SingleRecipe;
